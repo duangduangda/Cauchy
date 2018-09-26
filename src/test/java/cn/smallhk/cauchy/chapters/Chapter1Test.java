@@ -57,4 +57,21 @@ public class Chapter1Test {
         assertFalse(Chapter1.isPalindrome1(10));
         assertFalse(Chapter1.isPalindrome1(1231));
     }
+
+
+    @Test
+    public void testThirdMax(){
+        assertEquals(1,Chapter1.thirdMax(new int[]{2,3,1}));
+        assertEquals(1,Chapter1.thirdMax(new int[]{2,1,3}));
+        assertEquals(1,Chapter1.thirdMax(new int[]{1,2,3}));
+        assertEquals(1,Chapter1.thirdMax(new int[]{3,2,1}));
+        assertEquals(2,Chapter1.thirdMax(new int[]{1,2}));
+        assertEquals(2,Chapter1.thirdMax(new int[]{1,2,3,4}));
+        assertEquals(2,Chapter1.thirdMax(new int[]{4,2,3,1}));
+        assertEquals(1,Chapter1.thirdMax(new int[]{1,2,3,2}));
+        assertEquals(1,Chapter1.thirdMax(new int[]{1,2,2,3}));
+        assertEquals(1,Chapter1.thirdMax(new int[]{3,2,2,1}));
+        assertEquals(2,Chapter1.thirdMax(new int[]{1,2,2,5,3,5}));
+    }
+
 }
