@@ -2,9 +2,7 @@ package cn.smallhk.cauchy.chapters;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 /**
@@ -72,6 +70,87 @@ public class Chapter1Test {
         assertEquals(1,Chapter1.thirdMax(new int[]{1,2,2,3}));
         assertEquals(1,Chapter1.thirdMax(new int[]{3,2,2,1}));
         assertEquals(2,Chapter1.thirdMax(new int[]{1,2,2,5,3,5}));
+    }
+
+    @Test
+    public void testFindKthLargest(){
+        assertEquals(5,Chapter1.findKthLargest(new int[]{3,2,1,5,6,4},2));
+        assertEquals(4,Chapter1.findKthLargest(new int[]{3,2,3,1,2,4,5,5,6},4));
+    }
+
+    @Test
+    public void testTopKFrequent(){
+        assertTrue(Chapter1.topKFrequent(new int[]{1,1,1,2,2,3},2).contains(1));
+        assertTrue(Chapter1.topKFrequent(new int[]{1,1,1,2,2,3},2).contains(2));
+        assertTrue(Chapter1.topKFrequent(new int[]{1},1).contains(1));
+    }
+
+    @Test
+    public void testBinarySearch(){
+        assertEquals(4,Chapter1.binarySearch(new int[]{-1,0,3,5,9,12},9));
+        assertEquals(-1,Chapter1.binarySearch(new int[]{-1,0,3,5,9,12},2));
+        assertEquals(0,Chapter1.binarySearch(new int[]{5},5));
+        assertEquals(-1,Chapter1.binarySearch(new int[]{5},1));
+    }
+    @Test
+    public void testBinarySearch1(){
+        assertEquals(4,Chapter1.binarySearch1(new int[]{-1,0,3,5,9,12},9));
+        assertEquals(-1,Chapter1.binarySearch1(new int[]{-1,0,3,5,9,12},2));
+        assertEquals(0,Chapter1.binarySearch1(new int[]{5},5));
+        assertEquals(-1,Chapter1.binarySearch1(new int[]{5},1));
+    }
+
+    @Test
+    public void testMySqrt(){
+        assertEquals(2,Chapter1.mySqrt(4));
+        assertEquals(2,Chapter1.mySqrt(8));
+        assertEquals(46339,Chapter1.mySqrt(2147395599));
+    }
+
+    @Test
+    public void testIsPerfectSquare(){
+        assertTrue(Chapter1.isPerfectSquare(16));
+        assertFalse(Chapter1.isPerfectSquare(14));
+        assertFalse(Chapter1.isPerfectSquare(-1));
+        assertFalse(Chapter1.isPerfectSquare(0));
+        assertTrue(Chapter1.isPerfectSquare(1));
+        assertFalse(Chapter1.isPerfectSquare(2147483647));
+    }
+
+    @Test
+    public void testIsPerfectSquare1(){
+        assertTrue(Chapter1.isPerfectSquare1(16));
+        assertFalse(Chapter1.isPerfectSquare1(14));
+        assertFalse(Chapter1.isPerfectSquare1(-1));
+        assertFalse(Chapter1.isPerfectSquare1(0));
+        assertTrue(Chapter1.isPerfectSquare1(1));
+        assertFalse(Chapter1.isPerfectSquare1(2147483647));
+    }
+
+    @Test
+    public void testJudgeSquareSum(){
+        assertTrue(Chapter1.judgeSquareSum(5));
+        assertFalse(Chapter1.judgeSquareSum(3));
+        assertTrue(Chapter1.judgeSquareSum(0));
+        assertTrue(Chapter1.judgeSquareSum(1000000000));
+    }
+
+    @Test
+    public void testAddDigits(){
+        assertEquals(2, Chapter1.addDigits(38));
+        assertEquals(1, Chapter1.addDigits(100));
+        assertEquals(1, Chapter1.addDigits(10));
+        assertEquals(1, Chapter1.addDigits(1));
+        assertEquals(0, Chapter1.addDigits(0));
+    }
+
+    @Test
+    public void testIsHappy(){
+        assertTrue(Chapter1.isHappy(19));
+        assertTrue(Chapter1.isHappy(190));
+        assertTrue(Chapter1.isHappy(1));
+        assertFalse(Chapter1.isHappy(2));
+        assertFalse(Chapter1.isHappy(0));
     }
 
 }
