@@ -2,6 +2,8 @@ package cn.smallhk.cauchy.chapters;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 
@@ -151,6 +153,25 @@ public class Chapter1Test {
         assertTrue(Chapter1.isHappy(1));
         assertFalse(Chapter1.isHappy(2));
         assertFalse(Chapter1.isHappy(0));
+    }
+
+    @Test
+    public void testPascalTriangle(){
+        List<List<Integer>> resultList = Chapter1.pascalTriangle(5);
+        for (List<Integer>list:resultList){
+            for (Integer i :list){
+                System.out.print(i + "  ");
+            }
+            System.out.println();
+        }
+    }
+
+    @Test
+    public void testGetPascalTriangleRow(){
+        List<Integer> result = Chapter1.gtPascalTriangleRow(0);
+        for (Integer i :result){
+            System.out.println(i);
+        }
     }
 
 }

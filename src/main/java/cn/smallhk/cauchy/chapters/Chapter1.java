@@ -359,4 +359,56 @@ public class Chapter1 {
         }
         return num == 1;
     }
+
+
+    public static List<List<Integer>> pascalTriangle(int n) {
+        List<List<Integer>> resultlist = new ArrayList<>();
+        int[][] srt = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                srt[i][j] = 1;
+            }
+        }
+        for (int j = 1; j < n; j++) {
+            for (int z = 1; z <= j; z++) {
+                srt[j][z] = srt[j - 1][z - 1] + srt[j - 1][z];
+            }
+        }
+
+        List<Integer> rowlist = null;
+        for (int i = 0; i < n; i++) {
+            rowlist = new ArrayList<>();
+            for (int j = 0; j < n; j++) {
+                if (0 == srt[i][j]) {
+                    continue;
+                }
+                rowlist.add(srt[i][j]);
+            }
+            resultlist.add(rowlist);
+        }
+        return resultlist;
+    }
+
+    public static List<Integer> gtPascalTriangleRow(int rowIndex) {
+        List<Integer> integers = new ArrayList<>();
+        integers.add(1);
+        if(rowIndex == 0){
+            return integers;
+        }
+        for (int z = 1; z < rowIndex; z++) {
+            integers.add(doGetRow(rowIndex, z));
+        }
+        integers.add(1);
+        return integers;
+    }
+
+    public static int doGetRow(int row, int colum) {
+        if (row == 0  && colum > 0) {
+            return 0;
+        }else if(colum == 0){
+            return 1;
+        } else {
+            return doGetRow(row - 1, colum - 1) + doGetRow(row - 1, colum);
+        }
+    }
 }
