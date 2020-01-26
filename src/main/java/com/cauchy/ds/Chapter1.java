@@ -1,4 +1,4 @@
-package cn.smallhk.cauchy.chapters;
+package com.cauchy.ds;
 
 import java.util.*;
 

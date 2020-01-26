@@ -1,5 +1,6 @@
-package cn.smallhk.cauchy.chapters;
+package com.cauchy.ds;
 
+import com.cauchy.ds.Chapter1;
 import org.junit.Test;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class Chapter1Test {
 
     @Test
     public void testReverseInt(){
-        assertEquals(321,Chapter1.reverseInt(123));
+        assertEquals(321, Chapter1.reverseInt(123));
         assertEquals(3221,Chapter1.reverseInt(1223));
         assertEquals(121,Chapter1.reverseInt(121));
         assertEquals(21,Chapter1.reverseInt(12));

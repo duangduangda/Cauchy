@@ -1,5 +1,6 @@
-package cn.smallhk.cauchy.chapters;
+package com.cauchy.ds;
 
+import com.cauchy.ds.Chapter2;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -11,7 +12,7 @@ public class Chapter2Test {
 
     @Test
     public void testNumJewelsInStones(){
-        assertEquals(3,Chapter2.numJewelsInStones("aA","aAAbbbb"));
+        assertEquals(3, Chapter2.numJewelsInStones("aA","aAAbbbb"));
         assertEquals(0,Chapter2.numJewelsInStones("z","ZZ"));
     }
 
